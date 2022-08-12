@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/fb00b1590a.js" crossorigin="anonymous"></script>
+    
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+}
+.logo{
+    font-family: roboto;
+    position: absolute;
+    top: 50px;
+    left: 90px;
+    font-weight: bold;
+    color: #59577a;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+}
+.logo span{
+    font-family: roboto;
+    color:#7a72ff;
+}
+.searchArea{
+    position: fixed;
+    right: 90px;
+    top: 50px;
+    width: 170px;
+    height: 45px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow: 2px 2px 30px rgba(167,158,245,0.7);
+    box-sizing: border-box;
+    z-index: 1;
+    border: 1px solid rgb(186, 130, 238,0.3);
+}
+.searchbox input{
+    width: 90px;
+    height: 20px;
+    border: none;
+    outline: none;
+    background-color:transparent;
+    color: #1f1f1f;
+    font-size: 1rem;
+    padding: 0px 10px;
+    border-radius: 30px;
+}
+.searchbox input::placeholder{
+    color: #1d1d1d;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    font-family: poppins;
+
+}
+
+.half{
+    
+    display: flex;
+    width: 85%;
+    margin: 50px auto;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    height: 100vh;
+}
+
+.section1{
+    width: 40%;
+    font-family: myriad pro;
+}
+.section1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.section1 h1, h2{
+    font-family: Roboto;
+    font-weight: bold;
+    margin: 0px;
+    line-height: 60px;
+    font-size:4rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    letter-spacing: 3px;
+    color: #3d3d4a;
+    text-transform: uppercase;
+}
+.section1 h1 span, h2 span{
+    color: #7a72ff;
+    font-family: Roboto;
+}
+.section1 h1{
+    letter-spacing: 33px;
+}
+.btn1{
+    width: 150px;
+    height: 40px;
+    background-color:#575768;
+    box-shadow: -5px 5px 10px rgba(0,0,0,0.4);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    border: none;
+    margin-top: 20px;
+    font-family: calibri;
+    font-weight: 400;
+    letter-spacing: .5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.btn1:hover{
+    background: linear-gradient(120deg, #7a72ff,#a166f4);
+    transition: all ease 0.5s ;
+}
+
+
+.iconArea{
+    position:fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 30px;
+    background-color: #ffffff;
+    box-shadow: -5px 5px 20px rgba(0,0,0,0.2);
+    padding: 5px 0px;
+    z-index: 1;
+}
+.iconArea a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px ;
+    text-decoration: none;
+}
+.iconArea a i{
+    color: rgba(39,39,39,0.8);
+}
+
+
+.iconArea a:hover .fa-facebook-f{
+    color: #3b5998;
+}
+.iconArea a:hover .fa-twitter{
+    color: #00acee;
+}
+.iconArea a:hover .fa-instagram{
+    color: #3f729b;
+}
+.iconArea a:hover .fa-youtube{
+    color: #ff0000;
+}
+
+.productSection{
+    width: 85%;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 10px rgb(186, 130, 238,0.5) ;
+    display: flex;
+    margin: 30px auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px ;
+    margin-top:-60px ;
+    position: relative;
+    background-size: 1000px;
+    border-radius: 10px;
+}
+.productSection h3{
+    margin: 20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    font-family: myriad pro;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 2rem;
+    
+}
+.productSection h3 span{
+    font-family: myriad pro;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 2rem;
+    color:#7a72ff;
+    
+}
+.product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0px ;
+    width: 100%;
+}
+.productBox{
+    width: 250px;
+    height: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 8px;
+    position: relative;
+    margin: 10px 30px ;
+}
+.productBox img{
+    height: 150px;
+}
+.productBox p{
+    color: rgb(63, 61, 61);
+    font-family: myriad pro;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+.productBox a{
+    color: #2c2c2c;
+    font-family: poppins;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+.BuyBtn{
+    position:absolute;
+    width: 140px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: calibri;
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
+    border-radius: 30px;
+    background: linear-gradient(120deg,#6b60ec 5%,#a166f4);
+    color: white;
+    display: none;
+    animation: fade 0.2s;
+
+}
+
+.productBox:hover{
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    background-color:rgb(240, 248, 255,0.5) ;
+}
+.productBox:hover .BuyBtn{
+    display: flex;
+    color: white;
+}
+
+.about{
+    display: flex;
+    width: 85%;
+    margin: 50px auto;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+.aboutbox{
+    width: 40%;
+    font-family: myriad pro;
+}
+.aboutbox img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.aboutbox h1{
+    color: #1d1d1d;
+    font-weight: 700;
+    font-size: 3rem;
+    margin: 0px;
+    font-family: myriad pro;
+}
+.aboutbox h4{
+    color: #1d1d1d;
+    font-weight: 400;
+    font-size: 2rem;
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: myriad pro;
+}
+.aboutbox h4 span{
+    color:#6b60ec;
+    font-weight: 400;
+    font-size: 2rem;
+    margin: 0px;
+    font-family: myriad pro;
+}
+.aboutbox p{
+    font-size: 1rem;
+    font-family: myriad pro;
+    color:#968e8e;
+    letter-spacing: 0.7px;
+    word-spacing: 1.3px;
+    margin-bottom: 80px;
+}
+
+.notification{
+    width: 100%;
+    height: 250px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.notification h3{
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: myriad pro;
+    letter-spacing: 0.2px;
+    color: rgb(56,56,56);
+}
+.notification h3 span{
+    color:#6b60ec;
+    font-weight: 400;
+    font-size: 2rem;
+    margin: 0px;
+    font-family: myriad pro;
+}
+.notificationInput{
+    margin-top: 20px;
+    width: 70%/*500px*/;
+    background-color: white;
+    border-radius: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px ;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+}
+.notificationInput input{
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.notificationInput input::placeholder{
+    font-family: roboto;
+    font-size: 1rem;
+    padding-left: 10px;
+}
+
+.notificationButton{
+    width: 90px;
+    height: 35px;
+    background-color: #202020;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 20px rgba(0,0,0,0.1);
+    font-size: 0.8rem;
+    font-family:  myriad pro;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-right: -9px;
+}
+.notificationButton:hover{
+    background-color:#6b60ec;
+    transition: 0.5s;
+}
+footer{
+    background-color: black;
+    padding: 20px;
+}
+footer p{
+    text-align: center;
+    color: #f2f2f2;
+    font-family: roboto;
+    font-size: 1rem;
+}
+
+/*@media (max-width:274px) and (min-width:00px){
+    .section1 h1,h2{
+        font-family: Roboto;
+        font-weight: 400;
+        margin: 0px;
+        line-height: 20px;
+        font-size: 1rem;
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        letter-spacing: 1px;
+        color: #3d3d4a;
+        text-transform: uppercase;
+    }
+    .section1 h1{
+        letter-spacing: 8px;
+    }
+    .section1 .btn1{
+        width: 90px;
+        height: 30px;
+    }
+    .logo{
+        font-size: 1rem;
+        font-weight: 400;
+        text-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+        position: absolute;
+        top: 50px;
+        left: 20px;
+    }
+    .searchArea{
+        width: 90px;
+        height: 40px;
+        position: fixed;
+        top: 50px;
+        right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        z-index: 1;
+        border: 1px solid rgb(186, 130, 238,0.3);
+        
+    }
+    .searchbox input{
+        width: 90px;
+        padding-left: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+    .searchbox input::placeholder{
+        letter-spacing: 0px;
+        
+    }
+    .searchArea .searchbox i{
+        position: relative;
+        top: 19px;
+        left: 7px;
+    }
+
+    }*/
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="logo">
+            <span>S</span>hop<span>K</span>art
+        </div>
+
+        <div class="searchArea">
+            <div class="searchbox">
+                <i class="fas fa-search"></i>
+                <input type="search" placeholder="Search..." id="">
+            </div>
+        </div>
+
+        
+        <div class="half">
+
+            <div class="section1">
+                <img src="undraw_add_color_19gv.svg" alt="">
+            </div>
+
+            <div class="section1">
+                <h1>SU<span class="color">MM</span>ER</h1>
+
+                <h2>COLLECT<span class="color">ION</span></h2>
+                    
+                <button class="btn1">Buy Now</button>
+            </div>
+
+        </div>
+            
+        <!--Start-->
+
+        <div class="iconArea">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+
+    <section class="productSection">
+        <h3><span>New</span> Collections</h3>
+
+        <div class="product">
+
+            <div class="productBox">
+                <img src="undraw_shopping_app_flsj.svg" alt="">
+                <p>Fill your Basket</p>
+                <a href="">Price Range $5</a>
+                <a href="" class="BuyBtn">Visit</a>
+            </div>
+
+            <div class="productBox">
+                <img src="undraw_shopping_app_flsj.svg" alt="">
+                <p>Fill your Basket</p>
+                <a href="">Price Range $30</a>
+                <a href="" class="BuyBtn">Visit</a>
+            </div>
+
+            <div class="productBox">
+                <img src="undraw_shopping_app_flsj.svg" alt="">
+                <p>Fill your Basket</p>
+                <a href="">Price Range $50</a>
+                <a href="" class="BuyBtn">Visit</a>
+            </div>
+
+            <div class="productBox">
+                <img src="undraw_shopping_app_flsj.svg" alt="">
+                <p>Fill your Basket</p>
+                <a href="">Price Range $100</a>
+                <a href="" class="BuyBtn">Visit</a>
+            </div>
+
+            <div class="productBox">
+                <img src="undraw_shopping_app_flsj.svg" alt="">
+                <p>Fill your Basket</p>
+                <a href="">Price Range $500</a>
+                <a href="" class="BuyBtn">Visit</a>
+            </div>
+            
+            <div class="productBox">
+                <img src="undraw_shopping_app_flsj.svg" alt="">
+                <p>Fill your Basket</p>
+                <a href="">Price Range Above $500</a>
+                <a href="" class="BuyBtn">Visit</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="aboutbox">
+            <h1>About Company</h1>
+            <h4>Lorem ipsum dolor sit amet consectetur adipisicing <span>Buy Now</span></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi accusantium perspiciatis earum cupiditate, rem dolorem omnis officiis vitae iure illum tempore ducimus. Praesentium ut tempore ducimus, eius amet ad quis illum porro, a recusandae veniam veritatis est laborum eligendi qui quas facilis. Nostrum, aspernatur ducimus non fugit error cupiditate officia!</p>
+        </div>
+        <div class="aboutbox">
+            <img src="undraw_heatmap_uyye.svg" alt="">
+        </div>
+    </section>
+
+    <section class="productSection">
+        <h3><span>Showcase</span></h3>
+
+        <div class="product">
+
+            <div class="productBox">
+                <img src="undraw_smartwatch_74tv.svg" alt="">
+                <p>Accessiories</p>
+                <a href="">Starting from $5</a>
+                <a href="" class="BuyBtn">Add to Cart</a>
+            </div>
+
+            <div class="productBox">
+                <img src="undraw_watch_application_uhc9 (1).svg" alt="">
+                <p>Smart Watches</p>
+                <a href="">$70.6</a>
+                <a href="" class="BuyBtn">Add to Cart</a>
+            </div>
+
+            <div class="productBox">
+                <img src="undraw_in_no_time_6igu.svg" alt="">
+                <p>Watches</p>
+                <a href="">Starting from $10</a>
+                <a href="" class="BuyBtn">Add to Cart</a>
+            </div>
+
+            <div class="productBox">
+                <img src="undraw_career_progress_ivdb.svg" alt="">
+                <p>Garments</p>
+                <a href="">$23.5</a>
+                <a href="" class="BuyBtn">Add to Cart</a>
+            </div>
+
+            <div class="productBox">
+                <img src="undraw_Successful_purchase_re_mpig.svg" alt="">
+                <p>Bags</p>
+                <a href="">$12</a>
+                <a href="" class="BuyBtn">Add to Cart</a>
+            </div>
+            
+            <div class="productBox">
+                <img src="undraw_shopping_app_flsj.svg" alt="">
+                <p>Household</p>
+                <a href="">$3</a>
+                <a href="" class="BuyBtn">Add to Cart</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="notification">
+        <h3><span>Sign in</span> for new product notifications</h3>
+            <div class="notificationInput">
+                <input type="email" placeholder="Enter Your E-mail">
+                <a href="" class="notificationButton">SEND</a>
+            </div>
+    </section>
+
+    <footer>
+        <p> &copy;All Right Reserved By ShopKart&trade;</p>
+    </footer>
+
+</body>
+</html>
